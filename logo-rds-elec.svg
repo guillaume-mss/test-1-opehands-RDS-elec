@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 44" role="img" aria-label="RDS ELEC">
+  <rect width="200" height="44" rx="6" fill="#1a1a1a"/>
+  <text x="12" y="31" font-family="Arial Black, Archivo Black, sans-serif" font-size="22" font-weight="900" letter-spacing="-0.02em">
+    <tspan fill="#f0070b">RDS</tspan><tspan fill="#ffffff">ELEC</tspan>
+  </text>
+</svg>

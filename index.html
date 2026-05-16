@@ -57,32 +57,104 @@
         .logo {
             display: flex;
             align-items: center;
-            gap: 0.75rem;
+            text-decoration: none;
         }
         
-        .logo-mark {
-            width: 50px;
-            height: 50px;
-            background: var(--red-accent);
-            border-radius: 8px;
+        .logo img {
+            height: 44px;
+            width: auto;
+            display: block;
+        }
+        
+        /* Section mobilité électrique */
+        .feature-section {
+            padding: 5rem 2rem;
+            background: var(--off-white);
+        }
+        
+        .feature-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .feature-card {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            border: 2px solid transparent;
+            transition: border-color 0.3s;
+        }
+        
+        .feature-card:hover {
+            border-color: var(--red-accent);
+        }
+        
+        .feature-image img {
+            width: 100%;
+            height: 100%;
+            min-height: 320px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .feature-content {
+            padding: 3rem;
             display: flex;
-            align-items: center;
+            flex-direction: column;
             justify-content: center;
-            color: white;
-            font-family: 'Archivo Black', sans-serif;
-            font-size: 1.2rem;
-            font-weight: 900;
         }
         
-        .logo-text {
-            font-family: 'Archivo Black', sans-serif;
-            font-size: 1.5rem;
-            color: var(--black);
-            letter-spacing: -0.02em;
-        }
-        
-        .logo-text span {
+        .feature-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(240, 7, 11, 0.1);
             color: var(--red-accent);
+            padding: 0.35rem 0.9rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            width: fit-content;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-content h2 {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: clamp(1.75rem, 3vw, 2.5rem);
+            margin-bottom: 1rem;
+            line-height: 1.15;
+        }
+        
+        .feature-content p {
+            color: var(--light-gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+        
+        .feature-list {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+        
+        .feature-list li {
+            padding: 0.4rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            font-size: 0.95rem;
+        }
+        
+        .feature-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--red-accent);
+            font-weight: 700;
         }
         
         nav {
@@ -265,12 +337,113 @@
             animation: fadeInRight 1s ease-out 0.3s both;
         }
         
-        .hero-image img {
+        .hero-carousel {
+            position: relative;
             width: 100%;
             height: 500px;
-            object-fit: cover;
             border-radius: 16px;
+            overflow: hidden;
             box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+            background: var(--dark-gray);
+        }
+        
+        .hero-carousel-track {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .hero-carousel-slide {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            transition: opacity 0.6s ease;
+            pointer-events: none;
+        }
+        
+        .hero-carousel-slide.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        
+        .hero-carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .hero-carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 3;
+            width: 48px;
+            height: 48px;
+            border: none;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.92);
+            color: var(--black);
+            font-size: 1.75rem;
+            line-height: 1;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s, color 0.3s, transform 0.3s;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+        }
+        
+        .hero-carousel-btn:hover {
+            background: var(--red-accent);
+            color: white;
+        }
+        
+        .hero-carousel-btn:focus-visible {
+            outline: 2px solid var(--red-accent);
+            outline-offset: 2px;
+        }
+        
+        .hero-carousel-btn.prev {
+            left: 1rem;
+        }
+        
+        .hero-carousel-btn.next {
+            right: 1rem;
+        }
+        
+        .hero-carousel-dots {
+            position: absolute;
+            bottom: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3;
+            display: flex;
+            gap: 0.5rem;
+            padding: 0.4rem 0.75rem;
+            background: rgba(0, 0, 0, 0.45);
+            border-radius: 50px;
+            backdrop-filter: blur(6px);
+        }
+        
+        .hero-carousel-dot {
+            width: 8px;
+            height: 8px;
+            border: none;
+            border-radius: 50%;
+            padding: 0;
+            background: rgba(255, 255, 255, 0.45);
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s;
+        }
+        
+        .hero-carousel-dot.active {
+            background: var(--red-accent);
+            transform: scale(1.25);
+        }
+        
+        .hero-carousel-dot:hover {
+            background: rgba(255, 255, 255, 0.85);
         }
         
         .hero-stats {
@@ -613,6 +786,120 @@
             box-shadow: 0 10px 30px rgba(240, 7, 11, 0.3);
         }
         
+        .contact-right {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .contact-form {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact-form h3 {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .contact-form > p {
+            color: var(--light-gray);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        
+        .form-group label {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--medium-gray);
+            margin-bottom: 0.4rem;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 2px solid #e8e8e8;
+            border-radius: 8px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--red-accent);
+        }
+        
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .form-submit {
+            width: 100%;
+            background: var(--red-accent);
+            color: white;
+            border: none;
+            padding: 1rem;
+            border-radius: 8px;
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .form-submit:hover {
+            background: var(--red-dark);
+            transform: translateY(-2px);
+        }
+        
+        .form-submit:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .form-honeypot {
+            position: absolute;
+            left: -9999px;
+            opacity: 0;
+            height: 0;
+            width: 0;
+            overflow: hidden;
+        }
+        
+        .form-success {
+            display: none;
+            background: #e8f5e9;
+            border: 1px solid #4caf50;
+            color: #2e7d32;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+        
+        .form-success.visible {
+            display: block;
+        }
+        
         .contact-map {
             background: white;
             border-radius: 16px;
@@ -620,16 +907,27 @@
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
         }
         
-        .map-placeholder {
-            height: 400px;
-            background: linear-gradient(135deg, #333 0%, #1a1a1a 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #666;
-            font-size: 1rem;
+        .contact-map iframe {
+            display: block;
+            width: 100%;
+            height: 280px;
+            border: 0;
+        }
+        
+        .map-link {
+            display: block;
             text-align: center;
-            padding: 2rem;
+            padding: 0.75rem;
+            background: var(--off-white);
+            color: var(--red-accent);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: background 0.3s;
+        }
+        
+        .map-link:hover {
+            background: #eee;
         }
         
         /* ===== FOOTER ===== */
@@ -758,8 +1056,22 @@
                 font-size: 2.5rem;
             }
             
-            .hero-image img {
+            .hero-carousel {
                 height: 300px;
+            }
+            
+            .hero-carousel-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 1.4rem;
+            }
+            
+            .hero-carousel-btn.prev {
+                left: 0.5rem;
+            }
+            
+            .hero-carousel-btn.next {
+                right: 0.5rem;
             }
             
             .services-grid {
@@ -768,6 +1080,18 @@
             
             .contact-container {
                 grid-template-columns: 1fr;
+            }
+            
+            .feature-card {
+                grid-template-columns: 1fr;
+            }
+            
+            .feature-image img {
+                min-height: 240px;
+            }
+            
+            .feature-content {
+                padding: 2rem;
             }
             
             .footer-container {
@@ -786,14 +1110,14 @@
 <body>
     <!-- Header -->
     <header>
-        <div class="logo">
-            <div class="logo-mark">R</div>
-            <div class="logo-text">RDS <span>ELEC</span></div>
-        </div>
+        <a href="#" class="logo">
+            <img src="logo-rds-elec.png" alt="RDS ELEC" onerror="this.onerror=null;this.src='logo-rds-elec.svg'">
+        </a>
         <nav>
             <a href="#renovation">Rénovation</a>
             <a href="#depannage">Dépannage</a>
             <a href="#securite">Sécurité</a>
+            <a href="#bornes">Bornes VE</a>
             <a href="#avis">Avis</a>
             <a href="#contact">Contact</a>
         </nav>
@@ -834,7 +1158,46 @@
                 </div>
             </div>
             <div class="hero-image">
-                <img src="rds_photo-1.png" alt="RDS ELEC - Électricien professionnel">
+                <div class="hero-carousel" id="hero-carousel" aria-roledescription="carousel" aria-label="Réalisations RDS ELEC">
+                    <div class="hero-carousel-track">
+                        <div class="hero-carousel-slide active">
+                            <img src="rds_photo-1.png" alt="RDS ELEC — Rénovation électrique">
+                        </div>
+                        <div class="hero-carousel-slide">
+                            <img src="rds_photo-2.png" alt="Électricité générale et remise aux normes">
+                        </div>
+                        <div class="hero-carousel-slide">
+                            <img src="rds_photo-3.png" alt="Éclairage intérieur et extérieur">
+                        </div>
+                        <div class="hero-carousel-slide">
+                            <img src="rds_photo-4.png" alt="Chauffage électrique et domotique">
+                        </div>
+                        <div class="hero-carousel-slide">
+                            <img src="rds_photo-5.png" alt="Diagnostic et recherche de panne">
+                        </div>
+                        <div class="hero-carousel-slide">
+                            <img src="rds_photo-6.png" alt="Réparations électriques urgentes">
+                        </div>
+                        <div class="hero-carousel-slide">
+                            <img src="rds_photo-7.png" alt="Maintenance et dépannage express">
+                        </div>
+                        <div class="hero-carousel-slide">
+                            <img src="rds_photo-8.png" alt="Mise en sécurité électrique">
+                        </div>
+                        <div class="hero-carousel-slide">
+                            <img src="rds_photo-9.png" alt="Vidéosurveillance et alarme">
+                        </div>
+                        <div class="hero-carousel-slide">
+                            <img src="rds_elec_1.png" alt="Tableau électrique professionnel">
+                        </div>
+                        <div class="hero-carousel-slide">
+                            <img src="rds_elec_borne_recharge.png" alt="Borne de recharge véhicule électrique">
+                        </div>
+                    </div>
+                    <button type="button" class="hero-carousel-btn prev" id="hero-carousel-prev" aria-label="Photo précédente">‹</button>
+                    <button type="button" class="hero-carousel-btn next" id="hero-carousel-next" aria-label="Photo suivante">›</button>
+                    <div class="hero-carousel-dots" id="hero-carousel-dots" role="tablist" aria-label="Choisir une photo"></div>
+                </div>
             </div>
         </div>
     </section>
@@ -936,7 +1299,7 @@
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-image">
-                        <img src="rds_photo-8.png" alt="Tableau électrique et mise en sécurité">
+                        <img src="rds_elec_1.png" alt="Tableau électrique professionnel — RDS ELEC">
                     </div>
                     <div class="service-content">
                         <h3 class="service-title">Tableaux Électriques</h3>
@@ -963,6 +1326,32 @@
                         <p class="service-desc">Interphonie, visiophonie, détecteurs de fumée et monoxyde. Protection complète contre les risques.</p>
                         <a href="#contact" class="service-cta">Devis gratuit →</a>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bornes de recharge VE -->
+    <section id="bornes" class="feature-section">
+        <div class="feature-container">
+            <div class="feature-card">
+                <div class="feature-image">
+                    <img src="rds_elec_borne_recharge.png" alt="Installation borne de recharge véhicule électrique — RDS ELEC">
+                </div>
+                <div class="feature-content">
+                    <span class="feature-badge">⚡ Mobilité électrique</span>
+                    <h2>Bornes de recharge pour véhicules électriques</h2>
+                    <p>RDS ELEC installe et met en service vos bornes de recharge à domicile ou sur votre lieu d'activité. Étude, raccordement au tableau, mise aux normes et accompagnement pour une recharge fiable et sécurisée.</p>
+                    <ul class="feature-list">
+                        <li>Installation murale ou sur pied</li>
+                        <li>Renforcement du tableau si nécessaire</li>
+                        <li>Conseil puissance et normes IRVE</li>
+                        <li>Mise en service et tests de sécurité</li>
+                    </ul>
+                    <a href="#contact" class="btn-primary">
+                        Devis borne de recharge
+                        <span>→</span>
+                    </a>
                 </div>
             </div>
         </div>
@@ -1148,12 +1537,56 @@
                     <span>📞</span> Appeler maintenant
                 </a>
             </div>
-            <div class="contact-map">
-                <div class="map-placeholder">
-                    <div>
-                        <strong>81 Rue Jean Vivier Merle</strong><br>
-                        69490 Vindry-sur-Turdine
+            <div class="contact-right">
+                <form class="contact-form" id="contact-form" action="https://formsubmit.co/contact@rds-elec.fr" method="POST">
+                    <h3>Demande de devis ou message</h3>
+                    <p>Réponse sous 24 h en semaine. Pour une urgence, appelez directement.</p>
+                    <div id="form-success" class="form-success" role="status">
+                        Merci ! Votre message a bien été envoyé. Nous vous recontacterons rapidement.
                     </div>
+                    <input type="hidden" name="_next" id="form-next" value="">
+                    <input type="hidden" name="_subject" value="Nouveau message — Site RDS ELEC">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="text" name="_honey" class="form-honeypot" tabindex="-1" autocomplete="off">
+                    <div class="form-group">
+                        <label for="name">Nom complet *</label>
+                        <input type="text" id="name" name="name" required placeholder="Votre nom">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail *</label>
+                        <input type="email" id="email" name="email" required placeholder="votre@email.fr">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Téléphone</label>
+                        <input type="tel" id="phone" name="phone" placeholder="06 00 00 00 00">
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Type de demande</label>
+                        <select id="service" name="service">
+                            <option value="Rénovation">Rénovation</option>
+                            <option value="Dépannage urgent">Dépannage urgent</option>
+                            <option value="Sécurité">Sécurité</option>
+                            <option value="Borne de recharge VE">Borne de recharge VE</option>
+                            <option value="Autre">Autre</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" required placeholder="Décrivez votre besoin…"></textarea>
+                    </div>
+                    <button type="submit" class="form-submit" id="form-submit-btn">Envoyer ma demande</button>
+                </form>
+                <div class="contact-map">
+                    <iframe
+                        title="Localisation RDS ELEC — Vindry-sur-Turdine"
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        src="https://maps.google.com/maps?q=81+Rue+Jean+Vivier+Merle,+69490+Vindry-sur-Turdine,+France&amp;hl=fr&amp;z=16&amp;output=embed">
+                    </iframe>
+                    <a class="map-link" href="https://www.google.com/maps/dir/?api=1&amp;destination=81+Rue+Jean+Vivier+Merle,+69490+Vindry-sur-Turdine,+France" target="_blank" rel="noopener noreferrer">
+                        Ouvrir l'itinéraire dans Google Maps →
+                    </a>
                 </div>
             </div>
         </div>
@@ -1172,6 +1605,7 @@
                     <li><a href="#renovation">Rénovation</a></li>
                     <li><a href="#depannage">Dépannage</a></li>
                     <li><a href="#securite">Sécurité</a></li>
+                    <li><a href="#bornes">Bornes VE</a></li>
                 </ul>
             </div>
             <div class="footer-col">
@@ -1213,19 +1647,101 @@
         });
 
         // Header scroll effect
-        let lastScroll = 0;
         window.addEventListener('scroll', () => {
             const header = document.querySelector('header');
-            const currentScroll = window.pageYOffset;
-            
-            if (currentScroll > 100) {
+            if (window.pageYOffset > 100) {
                 header.style.boxShadow = '0 4px 20px rgba(0,0,0,0.1)';
             } else {
                 header.style.boxShadow = 'none';
             }
-            
-            lastScroll = currentScroll;
         });
+
+        const formNext = document.getElementById('form-next');
+        if (formNext && window.location.protocol.startsWith('http')) {
+            formNext.value = window.location.origin + window.location.pathname + '?sent=1#contact';
+        }
+
+        if (new URLSearchParams(window.location.search).get('sent') === '1') {
+            const successEl = document.getElementById('form-success');
+            if (successEl) {
+                successEl.classList.add('visible');
+                document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // Carrousel hero — défilement auto 5 s + flèches / points
+        (function () {
+            const carousel = document.getElementById('hero-carousel');
+            if (!carousel) return;
+
+            const slides = carousel.querySelectorAll('.hero-carousel-slide');
+            const dotsContainer = document.getElementById('hero-carousel-dots');
+            const INTERVAL_MS = 5000;
+            let current = 0;
+            let timer = null;
+
+            slides.forEach((_, i) => {
+                const dot = document.createElement('button');
+                dot.type = 'button';
+                dot.className = 'hero-carousel-dot' + (i === 0 ? ' active' : '');
+                dot.setAttribute('role', 'tab');
+                dot.setAttribute('aria-label', 'Photo ' + (i + 1));
+                dot.addEventListener('click', () => {
+                    goTo(i);
+                    resetAutoplay();
+                });
+                dotsContainer.appendChild(dot);
+            });
+
+            const dots = dotsContainer.querySelectorAll('.hero-carousel-dot');
+
+            function goTo(index) {
+                slides[current].classList.remove('active');
+                dots[current].classList.remove('active');
+                current = (index + slides.length) % slides.length;
+                slides[current].classList.add('active');
+                dots[current].classList.add('active');
+            }
+
+            function next() { goTo(current + 1); }
+            function prev() { goTo(current - 1); }
+
+            function startAutoplay() {
+                stopAutoplay();
+                timer = setInterval(next, INTERVAL_MS);
+            }
+
+            function stopAutoplay() {
+                clearInterval(timer);
+            }
+
+            function resetAutoplay() {
+                stopAutoplay();
+                startAutoplay();
+            }
+
+            document.getElementById('hero-carousel-next').addEventListener('click', () => {
+                next();
+                resetAutoplay();
+            });
+
+            document.getElementById('hero-carousel-prev').addEventListener('click', () => {
+                prev();
+                resetAutoplay();
+            });
+
+            carousel.addEventListener('mouseenter', stopAutoplay);
+            carousel.addEventListener('mouseleave', startAutoplay);
+            carousel.addEventListener('focusin', stopAutoplay);
+            carousel.addEventListener('focusout', startAutoplay);
+
+            document.addEventListener('visibilitychange', () => {
+                if (document.hidden) stopAutoplay();
+                else startAutoplay();
+            });
+
+            startAutoplay();
+        })();
     </script>
 </body>
 </html>
