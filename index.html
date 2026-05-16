@@ -1,0 +1,1231 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RDS ELEC - Électricien à Vindry-sur-Turdine | Rénovation, Dépannage, Sécurité</title>
+    <meta name="description" content="RDS ELEC : Electricien professionnel à Vindry-sur-Turdine. Services : rénovation électrique, dépannage urgent, sécurité. Note : 5,0/5 sur 12 avis. Appelez le 06 69 51 81 02">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --red-accent: #f0070b;
+            --black: #0a0a0a;
+            --dark-gray: #1a1a1a;
+            --medium-gray: #333333;
+            --light-gray: #666666;
+            --off-white: #f5f5f5;
+            --white: #ffffff;
+            --red-dark: #b80508;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background-color: var(--white);
+            color: var(--black);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* ===== HEADER ===== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--red-accent);
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .logo-mark {
+            width: 50px;
+            height: 50px;
+            background: var(--red-accent);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 900;
+        }
+        
+        .logo-text {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 1.5rem;
+            color: var(--black);
+            letter-spacing: -0.02em;
+        }
+        
+        .logo-text span {
+            color: var(--red-accent);
+        }
+        
+        nav {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        nav a {
+            color: var(--black);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            position: relative;
+            transition: color 0.3s;
+        }
+        
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--red-accent);
+            transition: width 0.3s;
+        }
+        
+        nav a:hover {
+            color: var(--red-accent);
+        }
+        
+        nav a:hover::after {
+            width: 100%;
+        }
+        
+        .header-cta {
+            background: var(--red-accent);
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: all 0.3s;
+        }
+        
+        .header-cta:hover {
+            background: var(--red-dark);
+            transform: translateY(-2px);
+        }
+        
+        /* ===== HERO ===== */
+        .hero {
+            min-height: 100vh;
+            padding-top: 100px;
+            background: linear-gradient(135deg, var(--black) 0%, var(--dark-gray) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(240, 7, 11, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(240, 7, 11, 0.1) 0%, transparent 40%);
+            pointer-events: none;
+        }
+        
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            padding: 4rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            align-items: center;
+        }
+        
+        .hero-content {
+            color: white;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(240, 7, 11, 0.2);
+            border: 1px solid var(--red-accent);
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--red-accent);
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        .hero h1 {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+        
+        .hero h1 span {
+            color: var(--red-accent);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: #999;
+            margin-bottom: 2rem;
+            max-width: 500px;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+        
+        .hero-cta-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.8s ease-out 0.6s both;
+        }
+        
+        .btn-primary {
+            background: var(--red-accent);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .btn-primary:hover {
+            background: var(--red-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(240, 7, 11, 0.3);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border: 2px solid white;
+            transition: all 0.3s;
+        }
+        
+        .btn-secondary:hover {
+            background: white;
+            color: var(--black);
+            transform: translateY(-3px);
+        }
+        
+        .hero-image {
+            position: relative;
+            animation: fadeInRight 1s ease-out 0.3s both;
+        }
+        
+        .hero-image img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 16px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero-stats {
+            display: flex;
+            gap: 3rem;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            animation: fadeInUp 0.8s ease-out 0.8s both;
+        }
+        
+        .stat {
+            text-align: left;
+        }
+        
+        .stat-number {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 2.5rem;
+            color: var(--red-accent);
+        }
+        
+        .stat-label {
+            font-size: 0.85rem;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        
+        /* ===== SERVICES SECTIONS ===== */
+        .services-section {
+            padding: 6rem 2rem;
+            position: relative;
+        }
+        
+        .services-section:nth-child(odd) {
+            background: var(--off-white);
+        }
+        
+        .services-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .section-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--red-accent);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+        }
+        
+        .section-title {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 1rem;
+        }
+        
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--light-gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s;
+            border: 1px solid #eee;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .service-card:hover .service-image img {
+            transform: scale(1.1);
+        }
+        
+        .service-content {
+            padding: 1.5rem;
+        }
+        
+        .service-title {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 1.2rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        .service-desc {
+            color: var(--light-gray);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+        
+        .service-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--red-accent);
+            font-weight: 600;
+            text-decoration: none;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .service-cta:hover {
+            gap: 0.75rem;
+        }
+        
+        /* ===== REVIEWS ===== */
+        .reviews-section {
+            background: var(--black);
+            padding: 6rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .reviews-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 0% 100%, rgba(240, 7, 11, 0.2) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        .reviews-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .reviews-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .reviews-title {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        .rating-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--red-accent);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-weight: 600;
+        }
+        
+        .stars {
+            color: #ffd700;
+        }
+        
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+        
+        .review-card {
+            background: var(--dark-gray);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s;
+        }
+        
+        .review-card:hover {
+            border-color: var(--red-accent);
+            transform: translateY(-5px);
+        }
+        
+        .review-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .review-avatar {
+            width: 50px;
+            height: 50px;
+            background: var(--red-accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 1.2rem;
+        }
+        
+        .review-info h4 {
+            color: white;
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+        }
+        
+        .review-date {
+            font-size: 0.8rem;
+            color: #888;
+        }
+        
+        .review-stars {
+            color: #ffd700;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .review-text {
+            color: #ccc;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            font-style: italic;
+        }
+        
+        /* ===== CONTACT ===== */
+        .contact-section {
+            padding: 6rem 2rem;
+            background: var(--off-white);
+        }
+        
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+        
+        .contact-info h2 {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-subtitle {
+            font-size: 1.1rem;
+            color: var(--light-gray);
+            margin-bottom: 2rem;
+        }
+        
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--red-accent);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.3rem;
+        }
+        
+        .contact-text h4 {
+            font-size: 0.85rem;
+            color: var(--light-gray);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.25rem;
+        }
+        
+        .contact-text p {
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+        
+        .contact-cta-button {
+            background: var(--red-accent);
+            color: white;
+            padding: 1.2rem 2.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-top: 1rem;
+            transition: all 0.3s;
+        }
+        
+        .contact-cta-button:hover {
+            background: var(--red-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(240, 7, 11, 0.3);
+        }
+        
+        .contact-map {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .map-placeholder {
+            height: 400px;
+            background: linear-gradient(135deg, #333 0%, #1a1a1a 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 1rem;
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--black);
+            padding: 4rem 2rem 2rem;
+            color: white;
+        }
+        
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+        }
+        
+        .footer-brand h3 {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-brand h3 span {
+            color: var(--red-accent);
+        }
+        
+        .footer-brand p {
+            color: #888;
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+        
+        .footer-col h4 {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #888;
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-col ul {
+            list-style: none;
+        }
+        
+        .footer-col li {
+            margin-bottom: 0.75rem;
+        }
+        
+        .footer-col a {
+            color: #ccc;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+        
+        .footer-col a:hover {
+            color: var(--red-accent);
+        }
+        
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 3rem auto 0;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: #666;
+        }
+        
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .hero-stats {
+                justify-content: center;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            header {
+                padding: 1rem;
+            }
+            
+            nav {
+                display: none;
+            }
+            
+            .hero {
+                padding-top: 80px;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-image img {
+                height: 300px;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <div class="logo-mark">R</div>
+            <div class="logo-text">RDS <span>ELEC</span></div>
+        </div>
+        <nav>
+            <a href="#renovation">Rénovation</a>
+            <a href="#depannage">Dépannage</a>
+            <a href="#securite">Sécurité</a>
+            <a href="#avis">Avis</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <a href="tel:0669518102" class="header-cta">06 69 51 81 02</a>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-grid">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span>⚡</span> Électricien professionnel à Vindry-sur-Turdine
+                </div>
+                <h1>Réparation.<br>Dépannage.<br><span>Sécurité.</span></h1>
+                <p class="hero-subtitle">RDS ELEC : votre électricien de confiance pour tous vos projets de rénovation, dépannage urgent et mise en sécurité électrique. Intervention rapide et professionnelle.</p>
+                <div class="hero-cta-group">
+                    <a href="#contact" class="btn-primary">
+                        Demander un devis gratuit
+                        <span>→</span>
+                    </a>
+                    <a href="tel:0669518102" class="btn-secondary">
+                        Appeler maintenant
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-number">5,0/5</div>
+                        <div class="stat-label">Note clients</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">12</div>
+                        <div class="stat-label">Avis vérifiés</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">+10</div>
+                        <div class="stat-label">Années d'expérience</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="rds_photo-1.png" alt="RDS ELEC - Électricien professionnel">
+            </div>
+        </div>
+    </section>
+
+    <!-- Rénovation Section -->
+    <section id="renovation" class="services-section">
+        <div class="services-container">
+            <div class="section-header">
+                <div class="section-icon">🔧</div>
+                <h2 class="section-title">Rénovation</h2>
+                <p class="section-subtitle">Modernisation et confort électrique pour votre habitat. Nous transformons vos espaces avec des solutions élégantes et performantes.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="rds_photo-2.png" alt="Électricité générale et remise aux normes">
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Électricité Générale & Normes</h3>
+                        <p class="service-desc">Mise en conformité NF C 15-100, rénovation totale ou partielle, extension de réseau électrique. Sécurité et performance garanties.</p>
+                        <a href="#contact" class="service-cta">Devis gratuit →</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="rds_photo-3.png" alt="Éclairage intérieur et extérieur">
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Éclairage Intérieur & Extérieur</h3>
+                        <p class="service-desc">Relamping LED, spots encastrés, rubans LED, éclairages architecturaux. Cré Atmosphère lumineuse adaptée à chaque pièce.</p>
+                        <a href="#contact" class="service-cta">Devis gratuit →</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="rds_photo-4.png" alt="Chauffage électrique et domotique">
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Chauffage & Domotique</h3>
+                        <p class="service-desc">Radiateurs à inertie, plancher chauffant, maison connectée. Contrôlez votre confort depuis votre smartphone.</p>
+                        <a href="#contact" class="service-cta">Devis gratuit →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dépannage Section -->
+    <section id="depannage" class="services-section">
+        <div class="services-container">
+            <div class="section-header">
+                <div class="section-icon">⚡</div>
+                <h2 class="section-title">Dépannage</h2>
+                <p class="section-subtitle">Intervention rapide et efficace pour tous vos problèmes électriques. Nous rétablissons votre confort en un temps record.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="rds_photo-5.png" alt="Diagnostic et recherche de panne">
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Diagnostic & Recherche de Panne</h3>
+                        <p class="service-desc">Localisation de court-circuit, analyse des baisses de tension. Diagnostic précis pour une intervention ciblée.</p>
+                        <a href="tel:0669518102" class="service-cta">Appeler d'urgence →</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="rds_photo-6.png" alt="Réparations urgentes">
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Réparations Urgentes</h3>
+                        <p class="service-desc">Remise en route d'installation, remplacement de disjoncteurs, prise en charge rapide de tout problème électrique.</p>
+                        <a href="tel:0669518102" class="service-cta">Appeler d'urgence →</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="rds_photo-7.png" alt="Maintenance et remplacement express">
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Maintenance & Express</h3>
+                        <p class="service-desc">Remplacement de prises, interrupteurs, dépannage de cumulus et chauffage. Service rapide et efficace.</p>
+                        <a href="tel:0669518102" class="service-cta">Appeler d'urgence →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sécurité Section -->
+    <section id="securite" class="services-section">
+        <div class="services-container">
+            <div class="section-header">
+                <div class="section-icon">🛡️</div>
+                <h2 class="section-title">Sécurité</h2>
+                <p class="section-subtitle">Protégez votre famille et vos biens avec nos solutions de sécurité électrique avancées.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="rds_photo-8.png" alt="Tableau électrique et mise en sécurité">
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Tableaux Électriques</h3>
+                        <p class="service-desc">Remplacement de tableau, mise à la terre, parafoudre. Installation aux normes pour votre sécurité.</p>
+                        <a href="#contact" class="service-cta">Devis gratuit →</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="rds_photo-9.png" alt="Vidéosurveillance et alarme">
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Vidéosurveillance & Alarme</h3>
+                        <p class="service-desc">Caméras IP, systèmes d'alarme, détecteurs de mouvement. Surveillance 24h/24 à distance.</p>
+                        <a href="#contact" class="service-cta">Devis gratuit →</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="rds_photo-1.png" alt="Contrôle d'accès et détection">
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Contrôle d'Accès</h3>
+                        <p class="service-desc">Interphonie, visiophonie, détecteurs de fumée et monoxyde. Protection complète contre les risques.</p>
+                        <a href="#contact" class="service-cta">Devis gratuit →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Avis Clients -->
+    <section id="avis" class="reviews-section">
+        <div class="reviews-container">
+            <div class="reviews-header">
+                <h2 class="reviews-title">Avis Clients</h2>
+                <div class="rating-badge">
+                    <span class="stars">★★★★★</span>
+                    5,0/5 (12 avis)
+                </div>
+            </div>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-author">
+                        <div class="review-avatar">A</div>
+                        <div class="review-info">
+                            <h4>Aïda</h4>
+                            <div class="review-date">il y a un an</div>
+                        </div>
+                    </div>
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Romain est un excellent professionnel et sait être très arrangeant et compréhensif ! Et heureusement car avec mes demandes il fallait s'accrocher !! Je le recommande à 1000%!!! Encore merci à toi pour tout ce que tu as fait dans nos différents lieux de vie 🙏"</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-author">
+                        <div class="review-avatar">A</div>
+                        <div class="review-info">
+                            <h4>Anne Cecile Anthony Fontes Ferreira</h4>
+                            <div class="review-date">il y a 2 ans</div>
+                        </div>
+                    </div>
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Très bon électricien. Travail soigné et de très bons conseils ont été donné à la suite de notre rénovation."</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-author">
+                        <div class="review-avatar">L</div>
+                        <div class="review-info">
+                            <h4>Lisiane B.</h4>
+                            <div class="review-date">il y a 3 ans</div>
+                        </div>
+                    </div>
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Professionnel et bienveillant, j'ai fait appel à Romain dans le cadre d'une rénovation d'appartement et je suis plus que ravie du travail effectué. Allez y les yeux fermés !"</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-author">
+                        <div class="review-avatar">K</div>
+                        <div class="review-info">
+                            <h4>Kristina MALIKOVA</h4>
+                            <div class="review-date">il y a 3 ans</div>
+                        </div>
+                    </div>
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Rapidité, professionnalisme et très bon rapport qualité prix ! Je recommande à 100%"</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-author">
+                        <div class="review-avatar">S</div>
+                        <div class="review-info">
+                            <h4>Sarah Jaeger</h4>
+                            <div class="review-date">il y a 3 ans</div>
+                        </div>
+                    </div>
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Merci à Romain pour son professionnalisme ! Je n'hésiterai pas à refaire appel à RDS ELEC !"</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-author">
+                        <div class="review-avatar">M</div>
+                        <div class="review-info">
+                            <h4>Mélanie Ferreira</h4>
+                            <div class="review-date">il y a 3 ans</div>
+                        </div>
+                    </div>
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Électricien très sérieux et réactif. Travail réalisé rapidement. Il connaît son boulot et est d'excellent conseil. Je conseille et rappellerai si besoin."</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-author">
+                        <div class="review-avatar">V</div>
+                        <div class="review-info">
+                            <h4>Valentin Serre</h4>
+                            <div class="review-date">il y a 3 ans</div>
+                        </div>
+                    </div>
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Très satisfait du travail. Réactivité, Ponctualité, Qualité, Professionnalisme."</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-author">
+                        <div class="review-avatar">I</div>
+                        <div class="review-info">
+                            <h4>Isabelle Faure</h4>
+                            <div class="review-date">il y a 4 ans</div>
+                        </div>
+                    </div>
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Réactivité, Ponctualité, Prix. Merci beaucoup pour votre confiance."</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-author">
+                        <div class="review-avatar">J</div>
+                        <div class="review-info">
+                            <h4>JUMEIRAH PRESTIGE SECURITY</h4>
+                            <div class="review-date">il y a 4 ans</div>
+                        </div>
+                    </div>
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Électricien au top ! Nous l'avons appelé pour des installations et réparations dans nos locaux, réactivité et professionnalisme au rendez-vous."</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-author">
+                        <div class="review-avatar">M</div>
+                        <div class="review-info">
+                            <h4>Maureen Salette</h4>
+                            <div class="review-date">il y a 5 ans</div>
+                        </div>
+                    </div>
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Très bon professionnel, à l'écoute de ses clients, réactif et ponctuel. Je recommande fortement !!"</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-author">
+                        <div class="review-avatar">É</div>
+                        <div class="review-info">
+                            <h4>Éliot Rozier</h4>
+                            <div class="review-date">il y a 5 ans</div>
+                        </div>
+                    </div>
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Ponctualité, Qualité, Prix. Excellent travail."</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-author">
+                        <div class="review-avatar">D</div>
+                        <div class="review-info">
+                            <h4>Dantenichake</h4>
+                            <div class="review-date">il y a 5 ans</div>
+                        </div>
+                    </div>
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Réactivité, Ponctualité, Qualité, Professionnalisme, Prix. Je recommande !"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact-section">
+        <div class="contact-container">
+            <div class="contact-info">
+                <h2>Contactez RDS ELEC</h2>
+                <p class="contact-subtitle">Une question ? Un projet ? Besoin d'un dépannage urgent ? N'hésitez pas à nous contacter.</p>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-text">
+                            <h4>Adresse</h4>
+                            <p>81 Rue Jean Vivier Merle, 69490 Vindry-sur-Turdine</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div class="contact-text">
+                            <h4>Téléphone</h4>
+                            <p>06 69 51 81 02</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">🕐</div>
+                        <div class="contact-text">
+                            <h4>Horaires</h4>
+                            <p>Lundi - Samedi : 8h - 19h<br>Dépannage urgent : 7j/7</p>
+                        </div>
+                    </div>
+                </div>
+                <a href="tel:0669518102" class="contact-cta-button">
+                    <span>📞</span> Appeler maintenant
+                </a>
+            </div>
+            <div class="contact-map">
+                <div class="map-placeholder">
+                    <div>
+                        <strong>81 Rue Jean Vivier Merle</strong><br>
+                        69490 Vindry-sur-Turdine
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h3>RDS <span>ELEC</span></h3>
+                <p>Votre électricien de confiance à Vindry-sur-Turdine. Spécialisé en rénovation, dépannage et sécurité électrique. Plus de 10 ans d'expérience au service des particuliers et professionnels.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#renovation">Rénovation</a></li>
+                    <li><a href="#depannage">Dépannage</a></li>
+                    <li><a href="#securite">Sécurité</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="tel:0669518102">06 69 51 81 02</a></li>
+                    <li><a href="mailto:contact@rds-elec.fr">contact@rds-elec.fr</a></li>
+                    <li>81 Rue Jean Vivier Merle</li>
+                    <li>69490 Vindry-sur-Turdine</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Légal</h4>
+                <ul>
+                    <li><a href="#">Mentions légales</a></li>
+                    <li><a href="#">Politique de confidentialité</a></li>
+                    <li><a href="#">CGV</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 RDS ELEC - Tous droits réservés</p>
+            <p>Électricien professionnel | Rénovation | Dépannage | Sécurité</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Header scroll effect
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 100) {
+                header.style.boxShadow = '0 4px 20px rgba(0,0,0,0.1)';
+            } else {
+                header.style.boxShadow = 'none';
+            }
+            
+            lastScroll = currentScroll;
+        });
+    </script>
+</body>
+</html>
